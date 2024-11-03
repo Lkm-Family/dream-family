@@ -4,7 +4,6 @@ permissions:
   contents: write
 jobs:
  build_doc_page:
-  consurrency: ci-${{ github.ref }} 
   runs-on: ubuntu-latest
   steps:
   - name: Checkout
