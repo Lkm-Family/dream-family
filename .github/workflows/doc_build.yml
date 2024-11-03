@@ -1,0 +1,23 @@
+name: Build doc page
+on: [push]
+permissions:
+  contents: write
+jobs:
+ build_doc_page:
+  consurrency: ci-${{ github.ref }} 
+  runs-on: ubuntu-latest
+  steps:
+  - name: Checkout
+    uses: actions/checkout@v4
+
+  - name: Install and Build
+    run:  |
+
+      cd doc
+      pnpm install
+      pnpm build
+
+  - name: Deploy
+    users: JamesIves/github-pages-deploy-action@v4
+    with:
+      folder: doc/build
