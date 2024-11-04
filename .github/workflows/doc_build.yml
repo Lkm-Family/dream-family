@@ -13,8 +13,8 @@ jobs:
     run:  |
 
       cd doc
-      pnpm install
-      pnpm build
+      npm install
+      npm build
 
   - name: Deploy
     uses: JamesIves/github-pages-deploy-action@v4
